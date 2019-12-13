@@ -166,7 +166,8 @@ module.exports = function(RED) {
              // Class 6: Transparent Slave Parameters
                  10: [  function(v) { return [convU8 (HB(v)      ), "tsp/number_supported"                             ] } ],
                  11: [  function(v) { return [convU8 (HB(v)      ), "tsp/index"                                        ] },
-                        function(v) { return [convU8 (LB(v)      ), "tsp/value"                                        ] } ],
+                        function(v) { return [convU8 (LB(v)      ), "tsp/value"                                        ] },
+                        function(v) { return ["{index:"+convU8(HB(v))+",value:"+convU8(LB(v))+"}", "tsp/parameter"     ] } ],
                  // 88	{u8 nu}		"Number of TSPs V/H"
                  // 89	{u8 u8}		"TSP setting V/H"
                  // 105	{u8 nu}		"Number of TSPs solar storage"
